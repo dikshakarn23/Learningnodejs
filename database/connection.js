@@ -5,7 +5,7 @@
 const mongoose = require("mongoose");
 
 async function connectWithDb() { //camelcase name
-  await mongoose.connect("mongodb+srv://nodejsworshop:Daditi@cluster0.cryidss.mongodb.net/?appName=Cluster0");  //This line connects your app to MongoDB Atlas (cloud database).
+  await mongoose.connect(process.env.CONNECTION_STRING)  //This line connects your app to MongoDB Atlas (cloud database).
 console.log("DB connected successfully")
 }
 module.exports = connectWithDb //makes the function available to other files.
